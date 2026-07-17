@@ -1,13 +1,14 @@
 <div align="center">
-  <img width="320px" src="ttt" />
+  <img width="320px" src="/assets/images/ttt" />
 </div>
 
-# Background
+## Background
 t
 
+Link to the deliverable section: [Link Text](##Insights).
 
 
-# Technologies Used
+## Technologies Used
 * An **OpenAI GPT-5.4 API** connection powers the **AI Agent**’s reasoning engine.
 * The Make.com JSON blueprints used for **workflow automation** are available here.
 * The **SQL** queries used to examine the final data and perform quality checks are available here.
@@ -20,27 +21,171 @@ t
 
 
 
-# Executive Summary
+## Executive Summary
 t
 
 
-# Project Architecture
+## Project Architecture
 t
 
 
 # Component 1 - AI Sentiment Analysis Workflow
+This primary workflow automatically analyzes review sentiment daily with an OpenAI GPT-5.4 API, evaluating previous-day reviews to generate key metrics including a polarity sentiment score from -1.0 to 1.0, sentiment category, topic, and emotion.
+
+These new metrics are combined with the original review metadata in a central table to power downstream analytics, including the up-to-date dashboard. Additionally, the agentic AI can alert customer support via Slack if it deems a review to be urgent.
+
+<div align="center">
+  <img width="320px" src="/assets/images/ttt" />
+</div
+
+(?)This workflow securely logs customer reviews daily. It first safeguards original data to ensure no review is lost, then uses an AI agent to analyze sentiment, and flag urgent feedback to your support team on Slack.
+
+### **Data Retrieval & Safeguarding**
+1. Automatically trigger every morning at 7:30 AM.
+2. Retrieve all rows from the *customer_reviews_raw* table (available here) where the date is the previous day.
+    <details>
+      <summary>Example input & output</summary>
+    
+    ```json
+    INPUT
+    [
+      {
+        "from": "drive",
+        "filter": [
+          [
+            {
+              "a": "B",
+              "b": "07/10/2026",
+              "o": "date:equal"
+            }
+          ]
+        ],
+        "sheetId": "Sheet1",
+        "sortOrder": "asc",
+        "spreadsheetId": "privacy",
+        "tableFirstRow": "A1:CZ1",
+        "includesHeaders": true,
+        "valueRenderOption": "FORMATTED_VALUE",
+        "dateTimeRenderOption": "FORMATTED_STRING"
+      }
+    ]
+    
+    OUTPUT
+    [
+      {
+        "0": "468",
+        "1": "7/10/2026",
+        "2": "4",
+        "3": "Apple AirTag",
+        "4": "Technology",
+        "5": "Nice to have a little bit of security when you attach it something you can walk away from for a while.",
+        "__ROW_NUMBER__": 469,
+        "__SPREADSHEET_ID__": "privacy",
+        "__SHEET__": "Sheet1",
+        "__IMTLENGTH__": 10,
+        "__IMTINDEX__": 1
+      }
+    ]
+    ```
+    
+    </details>
+
+3. Count the number of returned rows. If there are no reviews from yesterday (zero rows), end the workflow. If there are any reviews from yesterday (≤1 row), continue the workflow.
+4. Input the original columns (id, date, rating, product, category, and comments) into the *customer_reviews_processed* table (available here) before any AI logic.
+    - This ensures that if the AI API fails, the original information is still carried over to the new table for data integrity purposes and can be re-analyzed later.
+
+      <details>
+        <summary>Example input & output</summary>
+      
+      ```json
+      INPUT
+      [
+        {
+          "from": "drive",
+          "mode": "select",
+          "values": {
+            "0": "468",
+            "1": "7/10/2026",
+            "2": "4",
+            "3": "Apple AirTag",
+            "4": "Technology",
+            "5": "Nice to have a little bit of security when you attach it something you can walk away from for a while."
+          },
+          "sheetId": "Sheet1",
+          "spreadsheetId": "privacy",
+          "includesHeaders": true,
+          "insertDataOption": "INSERT_ROWS",
+          "useColumnHeaders": false,
+          "valueInputOption": "USER_ENTERED",
+          "insertUnformatted": false
+        }
+      ]
+      
+      OUTPUT
+      [
+        {
+          "spreadsheetId": "privacy",
+          "tableRange": "Sheet1!A1:O468",
+          "updates": {
+            "spreadsheetId": "privacy",
+            "updatedRange": "Sheet1!A469:F469",
+            "updatedRows": 1,
+            "updatedColumns": 6,
+            "updatedCells": 6
+          },
+          "sheetName": "Sheet1",
+          "rowNumber": 469
+        }
+      ]
+      ```
+      
+      </details>
+
+### **AI Logic & Analysis**
+5. Yesterday’s reviews, now retrieved, are given to the AI model for sentiment analysis and urgency detection.
+    * No text aggregation is needed before analysis, as the agentic AI aggregates the raw data automatically.
+6. The AI’s reasoning engine is powered by an OpenAI GPT-5.4 API connection.
+7. The AI is instructed to analyze each review to determine the following metrics:
+    * sentiment (VADER polarity score -1.0 to 1.0)
+    * confidence
+    * sentiment_category
+    * rating_consistency (0/1 binary)
+    * main_topic
+    * secondary_topic
+    * emotion
+    * action_needed (if the AI flags a review as urgent)
+    * drafted_response (professional email response if the review was negative)
+8. The AI then inputs this new data into the customer_reviews_processed table, using the row's original id primary key to ensure each review matches correctly.
+9. To execute this task, the AI is authorized to read and update rows in the customer_reviews_processed table.
+10. The AI is also instructed to evaluate whether the current review it is analyzing is urgent.
+Urgency is defined for the AI as a review whose comments require immediate human intervention (e.g., threats, asking a question, wants to return/refund, product safety issue, severe bugs, etc.).
+11. The AI is authorized to send a message in a specified Slack channel to alert support staff, at its discretion, if it deems a review to be urgent.
+
+The full prompt for the AI’s instructions is available here.
+
+
+<details>
+  <summary>Example input & output</summary>
+
+```json
+INPUT
+t
+```
+
+</details>
+
+
+
+
+## Component 2 - AI Executive Summary Workflow
 t
 
 
-# Component 2 - AI Executive Summary Workflow
+## Component 3 - SQL Data Validation
 t
 
 
-# Component 3 - SQL Data Validation
-t
-
-
-# Component 4 - Power BI Dashboard
+## Component 4 - Power BI Dashboard
 t
 
 
