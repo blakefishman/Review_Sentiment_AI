@@ -148,14 +148,44 @@ These new metrics are combined with the original review metadata in a central ta
 7. The AI is instructed to analyze each review to determine the following metrics:
     * sentiment (VADER polarity score -1.0 to 1.0)
     * confidence
-    * sentiment_category
     * rating_consistency (0/1 binary)
     * main_topic
     * secondary_topic
     * emotion
     * action_needed (if the AI flags a review as urgent)
     * drafted_response (professional email response if the review was negative)
+    * sentiment_category
 8. The AI then inputs this new data into the customer_reviews_processed table, using the row's original id primary key to ensure each review matches correctly.
+<details>
+  <summary>Example input & output</summary>
+
+```json
+INPUT
+{
+  "values_6": "0.62",
+  "values_7": "0.90",
+  "values_8": "1",
+  "values_9": "Security",
+  "values_10": "Convenience",
+  "values_11": "Satisfied",
+  "values_12": "",
+  "values_13": "",
+  "values_14": "Positive",
+  "rowNumber": 469
+}
+
+OUTPUT
+{
+  "spreadsheetId": "privacy",
+  "updatedRange": "Sheet1!A469:O469",
+  "updatedRows": 1,
+  "updatedColumns": 9,
+  "updatedCells": 9
+}
+```
+
+</details>
+
 9. To execute this task, the AI is authorized to read and update rows in the customer_reviews_processed table.
 10. The AI is also instructed to evaluate whether the current review it is analyzing is urgent.
 Urgency is defined for the AI as a review whose comments require immediate human intervention (e.g., threats, asking a question, wants to return/refund, product safety issue, severe bugs, etc.).
