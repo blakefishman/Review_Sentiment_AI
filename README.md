@@ -161,7 +161,6 @@ These new metrics are combined with the original review metadata in a central ta
 Urgency is defined for the AI as a review whose comments require immediate human intervention (e.g., threats, asking a question, wants to return/refund, product safety issue, severe bugs, etc.).
 11. The AI is authorized to send a message in a specified Slack channel to alert support staff, at its discretion, if it deems a review to be urgent.
 
-The full prompt for the AI’s instructions is available here.
 
 <details>
   <summary>📄 Full AI prompt instructions</summary>
@@ -173,12 +172,10 @@ t
 
 </details>
 
-
-
 <details>
   <summary>⚙️ Example AI Run #1</summary>
 
-### Analysis for Review ID #266
+### AI Sentiment Analysis for Review #266
 
 **1. AI Reasoning**
 ```md
@@ -244,12 +241,24 @@ Output:
 
 **5. 'Send a Slack Message' tool is called**
 
-Input:
+The message:
 ```md
 🚨 The following review from yesterday is urgent, and the customer should be contacted:
 • Review #266 with a 2/5 rating and Mixed sentiment.
 • The customer is Confused.
 • See the review for further details.
+```
+
+Input:
+```json
+[
+  {
+    "select": "channel",
+    "content": "🚨 The following review from yesterday is urgent, and the customer should be contacted:\n• Review #470 with a 2/5 rating and Mixed sentiment.\n• The customer is Confused.\n• See the review for further details.",
+    "channelId": "privacy",
+    "message_reference": {}
+  }
+]
 ```
 
 Output:
@@ -289,21 +298,94 @@ Output:
 
 </details>
 
-### Example review:
-**Review #370 Before:**
+
+<details>
+  <summary>⚙️ Example AI Run #2</summary>
+
+### AI Sentiment Analysis for Review #50
+
+**1. AI Reasoning**
+```md
+Analyzing product issues
+"I have the review but will need to search for a certain row and then update it. I'll assign a negative sentiment, perhaps around -0.85, with high confidence of this at 0.97. The main topic will be Product Functionality and secondary Comfort, showing an emotion of frustration. I’ve drafted a response for its negative category. I'm considering if the issue is urgent—it's a product malfunction, but there's no immediate safety concern or explicit request for a return or refund. I think it's probably not urgent, but we don't know what is causing the tracking issue. I'll classify it as non-urgent and leave the drafted response for the team's consideration. Now, I just need to search for matching IDs."
+```
+
+**2. 'Search Rows' tool is called**
+```json
+{
+  "array": [
+    {
+      "0": "50",
+      "1": "12/3/2025",
+      "2": "1",
+      "3": "Apple Magic Mouse",
+      "4": "Technology",
+      "5": "This is my second mac mouse. This one is smaller then the first one i had and really uncomfortable to hold.  I use the mouse all day and many times a day it won't track.  I tried everything, cleaning, turning bluetooth on and off.  Nothing works.  I am just going to get a 10$ mouse and hope it is better.",
+      "__ROW_NUMBER__": 51,
+      "__SPREADSHEET_ID__": "privacy",
+      "__SHEET__": "Sheet1",
+      "__IMTLENGTH__": 5,
+      "__IMTINDEX__": 5
+    }
+  ]
+}
+```
+
+**3. 'Update a Row' tool is called**
+ 
+Input:
+```json
+{
+  "values_6": "-0.86",
+  "values_7": "0.97",
+  "values_8": "1",
+  "values_9": "Product Functionality",
+  "values_10": "Comfort",
+  "values_11": "Frustrated",
+  "values_12": "",
+  "values_13": "Hello,\n\nThank you for sharing your feedback. We’re sorry to hear that the mouse has been uncomfortable to use and that you’ve experienced repeated tracking issues despite troubleshooting. We understand how frustrating this must be, especially when you rely on the mouse throughout the day. We’d appreciate the opportunity to learn more about the issues you encountered and see if there is anything we can do to help address the comfort and performance problems you described.\n\nBest regards,\nCustomer Support",
+  "values_14": "Negative",
+  "rowNumber": 51
+}
+```
+
+Output:
+```json
+{
+  "spreadsheetId": "privacy",
+  "updatedRange": "Sheet1!A51:O51",
+  "updatedRows": 1,
+  "updatedColumns": 9,
+  "updatedCells": 9
+}
+```
+
+**4. AI Reasoning**
+```md
+"Done. Review #50 was analyzed and updated in the sheet."
+```
+
+</details>
+
+<details>
+  <summary>📑 Example Table Row - Before & After</summary>
+
+### Example Table Row for Review #370:
+**Before:**
 
 | id | date | rating | product | category | comments |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 370 | 6/7/2026 | 5 | Nike Men's Running Sneaker | Shoes | Absolutely love them long time Nike wearer and so far these are the best highly recommend. |
 
 
-
-**Review #370 After:**
+**After:**
 | id | date | rating | product | category | comments | sentiment | confidence | rating_consistency | main_topic | secondary_topic | emotion | action_needed | drafted_response | sentiment_category |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 370 | 6/7/2026 | 5 | Nike Men's Running Sneaker | Shoes | Absolutely love them long time Nike wearer and so far these are the best highly recommend. | 0.94 | 0.98 | 1 | Product Quality | Brand Loyalty | Satisifed | null | null | Positive |
 
+</details>
 
+📂 The full, analyzed database table is available here.
 
 ## Component 2 - AI Executive Summary Workflow
 t
