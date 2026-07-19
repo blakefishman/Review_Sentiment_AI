@@ -2,7 +2,7 @@
   <img width="320px" src="/assets/images/ttt" />
 </div>
 
-## Background
+# Background
 **COMPANY** is a hypothetical e-commerce platform launched in 2025 that sells various retail goods, including Apple devices, Nike footwear, Stanley drinkware, and more. The business has amassed 467 total reviews since its inception and maintains a current average of # reviews per day for the current quarter (Q# 2026).
 
 The company lacks systems for analyzing customer feedback beyond basic metadata (e.g., product, rating, comments) for deeper insights. Additionally, there is no alert protocol in place to flag urgent, high-risk reviews for human intervention. Currently, recording review urgency and sentiment characteristics would require manual daily entry.
@@ -15,9 +15,9 @@ Additionally, a weekly executive summary is generated and delivered via Slack ev
 
 
 
-## Technologies Used
+# Technologies Used
 * An **OpenAI GPT-5.4 API** connection powers the **agentic AI**’s reasoning engine.
-* The Make.com JSON blueprints used for **workflow automation** are available here.
+* The **Make.com** blueprints used for **workflow automation** are available here.
 * The **SQL** queries used to examine the final data and perform quality checks are available here.
 * The **Power BI dashboard** for review sentiment trends & analysis is available here.
 * **Google Sheets** is used for cloud data input.
@@ -28,11 +28,11 @@ Additionally, a weekly executive summary is generated and delivered via Slack ev
 
 
 
-## Executive Summary
+# Executive Summary
 t
 
 
-## Project Architecture
+# Project Architecture
 t
 
 
@@ -401,7 +401,7 @@ Output:
 📂 The blueprint.json file is available here.
 
 
-## Component 2 - AI Executive Summary Workflow
+# Component 2 - AI Executive Summary Workflow
 This secondary workflow uses an OpenAI GPT-5.4 API to generate weekly executive summaries, delivered to a Slack channel or user. It provides a high-level overview of review performance from the past seven days and highlights long-term trends against older review data from previous months.
 
 The workflow automatically runs every Monday at 9:00 AM to keep key stakeholders updated on customer feedback and sentiment. The comparative trend analysis over previous months helps identify trends and maintain the larger picture.
@@ -574,11 +574,11 @@ ttttttttttttt
 📂 The blueprint.json file is available here.
 
 
-## Component 3 - SQL Data Validation
+# Component 3 - SQL Data Validation
 t
 
 
-## Component 4 - Power BI Dashboard
+# Component 4 - Power BI Dashboard
 t
 
 
