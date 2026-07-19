@@ -3,13 +3,20 @@
 </div>
 
 ## Background
-t
+**COMPANY** is a hypothetical e-commerce platform launched in 2025 that sells various retail goods, including Apple devices, Nike footwear, Stanley drinkware, and more. The business has amassed 467 total reviews since its inception and maintains a current average of # reviews per day for the current quarter (Q# 2026).
 
-Link to the deliverable section: [Link Text](##Insights).
+The company lacks systems for analyzing customer feedback beyond basic metadata (e.g., product, rating, comments) for deeper insights. Additionally, there is no alert protocol in place to flag urgent, high-risk reviews for human intervention. Currently, recording review urgency and sentiment characteristics would require manual daily entry.
+
+Automating this process is essential; without it, leadership lacks the up-to-date, actionable visibility required to track review performance and spot deeper emerging trends.
+
+**This project builds an end-to-end pipeline for AI review sentiment analysis.** It combines agentic AI workflows & automations, cloud data storage, Fivetran ELT connection, and BigQuery cloud data warehousing, culminating in a daily batch-processed Power BI dashboard to enable deeper customer insights. Reviews are automatically analyzed daily to determine metrics such as Sentiment, Topic, and Emotion, and a Slack API connection allows the AI agent to alert customer support if it deems a review to be urgent. 
+
+Additionally, a weekly executive summary is generated and delivered via Slack every Monday morning, providing a high-level overview of reviews from the past seven days. This also includes a comparative trend analysis that evaluates the latest seven days against historical reviews to identify long-term patterns.
+
 
 
 ## Technologies Used
-* An **OpenAI GPT-5.4 API** connection powers the **AI Agent**’s reasoning engine.
+* An **OpenAI GPT-5.4 API** connection powers the **agentic AI**’s reasoning engine.
 * The Make.com JSON blueprints used for **workflow automation** are available here.
 * The **SQL** queries used to examine the final data and perform quality checks are available here.
 * The **Power BI dashboard** for review sentiment trends & analysis is available here.
