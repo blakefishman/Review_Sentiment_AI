@@ -62,7 +62,7 @@ These new metrics are combined with the original review metadata in a central ta
           [
             {
               "a": "B",
-              "b": "07/10/2026",
+              "b": "05/08/2026",
               "o": "date:equal"
             }
           ]
@@ -82,13 +82,13 @@ These new metrics are combined with the original review metadata in a central ta
     ```json
     [
       {
-        "0": "468",
-        "1": "7/10/2026",
+        "0": "264",
+        "1": "5/8/2026",
         "2": "4",
         "3": "Apple AirTag",
         "4": "Technology",
         "5": "Nice to have a little bit of security when you attach it something you can walk away from for a while.",
-        "__ROW_NUMBER__": 469,
+        "__ROW_NUMBER__": 265,
         "__SPREADSHEET_ID__": "privacy",
         "__SHEET__": "Sheet1",
         "__IMTLENGTH__": 10,
@@ -113,8 +113,8 @@ These new metrics are combined with the original review metadata in a central ta
           "from": "drive",
           "mode": "select",
           "values": {
-            "0": "468",
-            "1": "7/10/2026",
+            "0": "264",
+            "1": "5/8/2026",
             "2": "4",
             "3": "Apple AirTag",
             "4": "Technology",
@@ -136,16 +136,16 @@ These new metrics are combined with the original review metadata in a central ta
       [
         {
           "spreadsheetId": "privacy",
-          "tableRange": "Sheet1!A1:O468",
+          "tableRange": "Sheet1!A1:O264",
           "updates": {
             "spreadsheetId": "privacy",
-            "updatedRange": "Sheet1!A469:F469",
+            "updatedRange": "Sheet1!A265:F265",
             "updatedRows": 1,
             "updatedColumns": 6,
             "updatedCells": 6
           },
           "sheetName": "Sheet1",
-          "rowNumber": 469
+          "rowNumber": 265
         }
       ]
       ```
@@ -566,7 +566,17 @@ t
 <details>
   <summary>📄 Example Executive Summary Message</summary>
 
-ttttttttttttt
+## Last Week’s Reviews (Monday – Sunday)
+Over the last 7 days, **10 reviews** were recorded across five products, with an average rating of **3.6/5** and an average sentiment score of approximately **0.39** on a polarity scale of -1.0 to 1.0. Review volume was concentrated in Technology, which accounted for **60%** of all weekly reviews, led by the Apple AirTag and the Apple Magic Mouse. Overall sentiment was mixed: **60%** of reviews were rated **4–5 stars**, while **40%** were rated **1–2 stars**, indicating a polarized customer experience. Positive feedback centered on Apple AirTag’s ease of use, seamless Apple ecosystem integration, and perceived security value, while LEGO and Nike both generated uniformly positive comments tied to gift satisfaction, value, and product appearance.
+
+The week’s main pain points were concentrated in the Apple Magic Mouse and Stanley Thermos. The Apple Magic Mouse produced the sharpest split, with one highly positive performance review offset by two negative reviews focused on **tracking reliability**, **comfort/ergonomics**, and **software incompatibility with macOS Sequoia**. Stanley Thermos also drew a low-rating review related to a **missing straw cap/component**, suggesting a fulfillment or packaging quality issue rather than a core product problem.
+
+## Trend Analysis
+Compared with the prior 3 months, review performance over the last 7 days softened modestly. Historical data showed broadly positive feedback, especially for the Apple AirTag, LEGO Toy Set, Nike Men’s Running Sneaker, and Stanley Thermos, with many reviews clustering at **4–5 stars** and recurring praise for reliability, ease of use, value, and strong product performance. Last week’s average rating of **3.6/5** appears somewhat below the historical pattern, driven largely by a higher share of low-rated reviews from a small sample. The most stable positive trend continues to be the Apple AirTag, where customers consistently mention tracking utility, peace of mind, and strong Apple device integration across both periods. LEGO and Nike also remain steady, with no emerging quality concerns and continued positive value perception.
+
+The most persistent negative trend remains the Apple Magic Mouse. Across the historical period, repeated complaints centered on **ergonomics**, the **bottom charging port**, and more recently **USB-C and macOS Sequoia compatibility limitations**; these same compatibility issues reappeared in these last 7 days, indicating no meaningful resolution in customer perception. The Stanley Thermos shows a similar long-running but less severe pattern: while customers consistently praise temperature retention, durability, and design, recurring complaints continue around **leak resistance**, **missing accessories/components**, and inconsistent **packaging/condition on arrival**.
+
+Overall, the past week largely reinforces existing trends rather than introducing new ones: the Apple AirTag remains the strongest and most consistent performer, while the Apple Magic Mouse's compatibility/usability issues and Stanley Thermos packaging/accessory execution continue to be the most actionable areas for improvement.
 
 
 </details>
