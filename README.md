@@ -44,10 +44,10 @@ These new metrics are combined with the original review metadata in a central ta
 1. Automatically trigger every morning at 7:30 AM.
 2. Retrieve all rows from the *customer_reviews_raw* table (available here) where the date is the previous day.
     <details>
-      <summary>Example input & output</summary>
-    
+      <summary>Example Input & Output</summary>
+
+    Input:
     ```json
-    INPUT
     [
       {
         "from": "drive",
@@ -69,8 +69,10 @@ These new metrics are combined with the original review metadata in a central ta
         "dateTimeRenderOption": "FORMATTED_STRING"
       }
     ]
-    
-    OUTPUT
+    ```
+
+    Output:
+    ```json
     [
       {
         "0": "468",
@@ -91,14 +93,14 @@ These new metrics are combined with the original review metadata in a central ta
     </details>
 
 3. Count the number of returned rows. If there are no reviews from yesterday (zero rows), end the workflow. If there are any reviews from yesterday (≤1 row), continue the workflow.
-4. Input the original columns (id, date, rating, product, category, and comments) into the *customer_reviews_processed* table (available here) before any AI logic.
+4. Input these returned rows with their original fields (id, date, rating, product, category, and comments) into the *customer_reviews_processed* table (available here) before any AI logic starts.
     - This ensures that if the AI API fails, the original information is still carried over to the new table for data integrity purposes and can be re-analyzed later.
 
       <details>
-        <summary>Example input & output</summary>
+        <summary>Example Input & Output</summary>
       
+      Input:
       ```json
-      INPUT
       [
         {
           "from": "drive",
@@ -120,8 +122,10 @@ These new metrics are combined with the original review metadata in a central ta
           "insertUnformatted": false
         }
       ]
-      
-      OUTPUT
+      ```
+
+      Output:
+      ```json
       [
         {
           "spreadsheetId": "privacy",
@@ -163,7 +167,7 @@ Urgency is defined for the AI as a review whose comments require immediate human
 
 
 <details>
-  <summary>📄 Full AI prompt instructions</summary>
+  <summary>📄 Full AI Prompt Instructions</summary>
 
 **Prompt file is also available here.**
 ```md
@@ -387,8 +391,180 @@ Output:
 
 📂 The full, analyzed database table is available here.
 
+📂 The blueprint.json file is available here.
+
+
 ## Component 2 - AI Executive Summary Workflow
+This secondary workflow uses an OpenAI GPT-5.4 API to generate weekly executive summaries, delivered to a Slack channel or user. It provides a high-level overview of review performance from the past seven days and highlights long-term trends against older review data from previous months.
+
+The workflow automatically runs every Monday at 9:00 AM to keep key stakeholders updated on customer feedback and sentiment. The comparative trend analysis over previous months helps identify trends and maintain the larger picture.
+
+<div align="center">
+  <img width="320px" src="/assets/images/ttt" />
+</div
+
+
+### **Data Retrieval**
+
+1. Automatically trigger every Monday at 9:00 AM.
+2. Retrieve all rows from the *customer_reviews_processed table* (available here) from within the last seven days.
+      <details>
+        <summary>Example Input & Output</summary>
+      
+      Input:
+      ```json
+      [
+        {
+          "from": "drive",
+          "filter": [
+            [
+              {
+                "a": "B",
+                "b": "07/04/2026",
+                "o": "date:greaterorequal"
+              }
+            ]
+          ],
+          "sheetId": "Sheet1",
+          "sortOrder": "asc",
+          "spreadsheetId": "privacy",
+          "tableFirstRow": "A1:CZ1",
+          "includesHeaders": true,
+          "valueRenderOption": "FORMATTED_VALUE",
+          "dateTimeRenderOption": "FORMATTED_STRING"
+        }
+      ]
+      ```
+      
+      Output:
+      ```json
+      [
+        {
+          "0": "468",
+          "1": "7/10/2026",
+          "2": "4",
+          "3": "Apple AirTag",
+          "4": "Technology",
+          "5": "Nice to have a little bit of security when you attach it something you can walk away from for a while.",
+          "6": "0.62",
+          "7": "0.9",
+          "8": "1",
+          "9": "Security",
+          "10": "Convenience",
+          "11": "Satisfied",
+          "12": "",
+          "13": "",
+          "14": "Positive",
+          "__ROW_NUMBER__": 469,
+          "__SPREADSHEET_ID__": "privacy",
+          "__SHEET__": "Sheet1",
+          "__IMTLENGTH__": 10,
+          "__IMTINDEX__": 1
+        }
+      ]
+      ```
+      *+9 more rows*
+      
+      </details>
+
+3. Aggregate the rows into one AI-parsable text string.
+    - Unlike the first workflow, this non-agentic AI connection cannot aggregate data automatically and needs a text string input.
+4. Retrieve all rows from the customer_reviews_processed table (available here) from the last three months, but excluding the last seven days.
+
+      <details>
+        <summary>Example Input & Output</summary>
+      
+      Input:
+      ```json
+      [
+        {
+          "from": "drive",
+          "filter": [
+            [
+              {
+                "a": "B",
+                "b": "04/11/2026",
+                "o": "date:greater"
+              },
+              {
+                "a": "B",
+                "b": "07/04/2026",
+                "o": "date:less"
+              }
+            ]
+          ],
+          "sheetId": "Sheet1",
+          "sortOrder": "asc",
+          "spreadsheetId": "privacy",
+          "tableFirstRow": "A1:CZ1",
+          "includesHeaders": true,
+          "valueRenderOption": "FORMATTED_VALUE",
+          "dateTimeRenderOption": "FORMATTED_STRING"
+        }
+      ]
+      ```
+      
+      Output (truncated for simplicity, as 277 rows were returned):
+      ```json
+      [
+        {
+          "0": "191",
+          "1": "4/12/2026",
+          "2": "4",
+          "3": "Apple Magic Mouse",
+          "4": "Technology",
+          "5": "Apple products just seem to work very well.  I've tried the non-Apple products and have been disappointed every time!  The Apple Magic Mouse works great as did the other  Apple Magic Mouses.  Charging  it was funny, you lay the mouse upside down and connect the charger to the bottom side.  Great product.  Charges last a long time.",
+          "6": "0.88",
+          "7": "0.95",
+          "8": "1",
+          "9": "Product Performance",
+          "10": "Battery Life",
+          "11": "Satisfied",
+          "12": "",
+          "13": "",
+          "14": "Positive",
+          "__ROW_NUMBER__": 192,
+          "__SPREADSHEET_ID__": "privacy",
+          "__SHEET__": "Sheet1",
+          "__IMTLENGTH__": 277,
+          "__IMTINDEX__": 1
+        }
+      ]
+      ```
+      *+276 more rows*
+      
+      </details>
+
+5. Aggregate these rows into another AI-parsable text string.
+
+### **AI Logic & Analysis**
+6. Both review outputs, as aggregated text strings, are given to the AI model to generate the executive summary.
+    - The aggregated text strings are isolated into distinct outputs to preserve organization and mitigate AI processing errors
+7. The AI’s reasoning engine is powered by an OpenAI GPT-5.4 API connection.
+8. The AI is instructed to generate an executive summary based on reviews from the last seven days (the first text string). It also generates a summary comparing these reviews against a three-month trend analysis (the second text string). Consistent formatting rules are specified.
+
+### **Slack Delivery**
+9. The AI result is sent to a specific Slack channel or user.
+ 
+<details>
+  <summary>📄 Full AI Prompt Instructions</summary>
+
+**Prompt file is also available here.**
+```md
 t
+```
+
+</details>
+
+<details>
+  <summary>📄 Example Executive Summary Message</summary>
+
+ttttttttttttt
+
+
+</details>
+
+📂 The blueprint.json file is available here.
 
 
 ## Component 3 - SQL Data Validation
@@ -412,11 +588,18 @@ t
 
 
 <details>
-  <summary>Example input & output</summary>
+  <summary>tttttttttttt</summary>
 
+Input:
 ```json
-INPUT
+t
+```
+
+Output:
+```json
 t
 ```
 
 </details>
+
+
