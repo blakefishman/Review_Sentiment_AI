@@ -350,7 +350,7 @@ Input:
   "values_6": "-0.86",
   "values_7": "0.97",
   "values_8": "1",
-  "values_9": "Product Functionality",
+  "values_9": "Functionality",
   "values_10": "Comfort",
   "values_11": "Frustrated",
   "values_12": "",
