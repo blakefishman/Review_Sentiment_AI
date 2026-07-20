@@ -51,7 +51,7 @@ These new metrics are combined with the original review metadata in a central ta
 1. Automatically trigger every morning at 7:30 AM.
 2. Retrieve all rows from the *customer_reviews_raw* table (available here) where the date is the previous day.
     <details>
-      <summary>Example Input & Output</summary>
+      <summary>⚙️ Example Input & Output</summary>
 
     Input:
     ```json
@@ -104,7 +104,7 @@ These new metrics are combined with the original review metadata in a central ta
     - This ensures that if the AI API fails, the original information is still carried over to the new table for data integrity purposes and can be re-analyzed later.
 
       <details>
-        <summary>Example Input & Output</summary>
+        <summary>⚙️ Example Input & Output</summary>
       
       Input:
       ```json
@@ -416,7 +416,7 @@ The workflow automatically runs every Monday at 9:00 AM to keep key stakeholders
 1. Automatically trigger every Monday at 9:00 AM.
 2. Retrieve all rows from the *customer_reviews_processed table* (available here) from within the last seven days.
       <details>
-        <summary>Example Input & Output</summary>
+        <summary>⚙️ Example Input & Output</summary>
       
       Input:
       ```json
@@ -479,7 +479,7 @@ The workflow automatically runs every Monday at 9:00 AM to keep key stakeholders
 4. Retrieve all rows from the customer_reviews_processed table (available here) from the last three months, but excluding the last seven days.
 
       <details>
-        <summary>Example Input & Output</summary>
+        <summary>⚙️ Example Input & Output</summary>
       
       Input:
       ```json
