@@ -584,20 +584,31 @@ Overall, the past week largely reinforces existing trends rather than introducin
 📂 The blueprint.json file is available here.
 
 
-# Component 3 - SQL Data Validation
-t
+# Component 3 - Power BI Dashboard
+[Overview page]
 
-
-# Component 4 - Power BI Dashboard
 t
 
 
 ## Insights
-t
+* **Review volume has surged significantly so far this year** compared to the company’s launch last year in 2025. Feedback has stabilized at a 3.8 out of 5-star average rating with a +0.64 average sentiment score, leading to 80% of reviews being Positive.
+* **The Stanley Thermos is the strongest-performing product**, with a 4.1 out of 5-star average rating and a +0.75 average sentiment score, leading to 87.6% of reviews being Positive sentiment. Added to the lineup in September 2025, the Stanley Thermos gained significant traction in April 2026 and is currently our second-most reviewed product of all time.
+* **Conversely, Apple Magic Mouse is the weakest-performing product**, with a 3.6 out of 5-star average rating and a notably lower average sentiment score of +0.40. It is the source of over half of all negative reviews (52.6%), and over a third of its reviews have Mixed or Negative sentiment. Main friction points center on poor usability, an uncomfortable design, and compatibility issues with some macOS versions.
+    * Note: With only four reviews since its launch last month, **the Apple AirPods product requires a larger sample size before it can be fully considered for analysis**. Otherwise, it would be the worst-performing product, with a 2.3 average rating and -0.38 average sentiment score. Initial sentiment is highly negative, making up 75% of the reviews.
+* **The LEGO Toy Set product had an anomalous spike** to 35 reviews in March 2026 before returning to its normal rate of around 10 reviews per month, possibly due to delayed Christmas gift feedback, as ‘Gift Appeal’ and ‘Gift Satisfaction’ were top review topics during this time.
+* Top friction topics for all products include product usability, design, quality, and compatibility. These will vary by product, but the technology category, which receives the highest proportion of Mixed and Negative reviews, exhibits most of these flaws.
+* 12.6% of reviews, despite maintaining a high positive sentiment (+0.74 average) and overwhelmingly ‘Satisfied’ emotional tone, fall into the lower 1-3 star rating range (2.6 average). The largest point of friction for these reviews is ‘Item Tracking’, suggesting that while the product itself may be praised, external shipping and fulfillment issues drag the rating down.
+
 
 
 ## Recommendations
-t
+* **Investigate the design and compatibility issues for the Apple Magic Mouse**, particularly ensuring that the company website includes comprehensive technical support disclaimers and macOS compatibility guides.
+* **Monitor the newly introduced Apple AirPods** for more negative feedback and investigate whether quality control issues exist. It is possible we received a malfunctioning batch.
+* Ensure support teams are equipped to handle technical difficulty issues related to connectivity and compatibility.
+* **Run post-holiday email campaigns to gather reviews from gift seekers** by targeting holiday buyers in the weeks following Christmas, potentially replicating the post-holiday LEGO Toy Set review spike for other products.
+* **Expand the aforementioned compatibility review to all products in the Technology category**, since compatibility remains a primary source of customer friction overall and is occuring most in this category.
+* **Improve tracking reliability and delivery visibility** by adding real-time GPS maps, proactive text alerts, and estimated arrival windows to increase customer confidence and mend this point of friction.
+
 
 
 ## Future Improvements & Limitations
