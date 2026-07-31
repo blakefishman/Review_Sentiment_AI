@@ -376,6 +376,8 @@ Output:
 "Done. Review #50 was analyzed and updated in the sheet."
 ```
 
+**See Example AI Run #1 for an example with the Slack message functionality.**
+
 </details>
 
 <details>
