@@ -611,8 +611,15 @@ t
 
 
 
-## Future Improvements & Limitations
-t
+# Future Improvements
+* Consolidate and standardize main_topic category options to minimize excessive variability.
+* Update the pipeline trigger from a daily schedule to event-driven, firing every time a new review row is added to the reviews_raw table.
+* Because this project relies on a static dataset on Google Drive & BigQuery rather than live web reviews from a website, implementing a real-time capture webhook was not feasible.
+* Store processed data directly in BigQuery to eliminate Google Sheets and Fivetran intermediate steps.
+* Integrate a customer support ticket system for urgent cases instead of Slack alerts.
+* Implement web scraping for competitor reviews to enable a competitor comparative analysis for the weekly executive summaries.
+* Perform demographic analyses by including customer demographic information. However, the current real-world review dataset is anonymized and lacks customer data such as age, gender, and location.
+
 
 
 <details>
