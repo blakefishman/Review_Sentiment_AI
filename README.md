@@ -3,7 +3,7 @@
 </div>
 
 # Background
-**COMPANY** is a hypothetical e-commerce platform launched in 2025 that sells various retail goods, including Apple devices, Nike footwear, Stanley drinkware, and more. The business has amassed 467 total reviews since its inception and maintains a current average of # reviews per day for the current quarter (Q# 2026).
+**CyberShop.com** is a hypothetical e-commerce platform launched in 2025 that sells various retail goods, including Apple devices, Nike footwear, Stanley drinkware, and more. The business has amassed 467 total reviews since its inception, with most occurring in 2026.
 
 The company lacks systems for analyzing customer feedback beyond basic metadata (e.g., product, rating, comments) for deeper insights. Additionally, there is no alert protocol in place to flag urgent, high-risk reviews for human intervention. Currently, recording review urgency and sentiment characteristics would require manual daily entry.
 
@@ -17,7 +17,7 @@ Additionally, a weekly executive summary is generated and delivered via Slack ev
 # Technologies Used
 * An **OpenAI GPT-5.4 API** connection powers the **agentic AI**’s reasoning engine.
 * The **Make.com** blueprints used for **workflow automation** are available here.
-* The **SQL** queries used to examine the final data and perform quality checks are available here.
+* The **SQL** queries used to examine the final data and perform quality checks are available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/SQL%20Queries/Initial%20Data%20Checks%20and%20Examination.sql).
 * The **Power BI dashboard** for review sentiment trends & analysis is available here.
 * **Google Sheets** is used for cloud data input.
 * **Google Drive** is used for cloud storage.
@@ -32,7 +32,7 @@ tt
 
 
 # Project Architecture
-t
+t?
 
 
 # Component 1 - AI Sentiment Analysis Workflow
@@ -592,7 +592,7 @@ Overall, the past week largely reinforces existing trends rather than introducin
   <img width="1000px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/dashboard_overview.jpg" />
 </div>
 
-t
+The full dashboard is available here.
 
 
 ## Insights
