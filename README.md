@@ -14,7 +14,6 @@ Automating this process is essential; without it, leadership lacks the up-to-dat
 Additionally, a weekly executive summary is generated and delivered via Slack every Monday morning, providing a high-level overview of reviews from the past seven days. This also includes a comparative trend analysis that evaluates the latest seven days against historical reviews to identify long-term patterns.
 
 
-
 # Technologies Used
 * An **OpenAI GPT-5.4 API** connection powers the **agentic AI**’s reasoning engine.
 * The **Make.com** blueprints used for **workflow automation** are available here.
@@ -41,13 +40,10 @@ This primary workflow automatically analyzes review sentiment daily with an Open
 
 These new metrics are combined with the original review metadata in a central table to power downstream analytics, including the up-to-date dashboard. Additionally, the agentic AI can alert customer support via Slack if it deems a review to be urgent.
 
+
 <div align="center">
-  <img width="320px" src="[/assets/images/ttt](https://github.com/user-attachments/assets/a9076b89-583b-44d7-926e-852bcc4c9685)" />
-</div
-
-
-<img width="5660" height="2291" alt="sentiment_analysis_workflow" src="https://github.com/user-attachments/assets/a9076b89-583b-44d7-926e-852bcc4c9685" />
-
+  <img width="900px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/sentiment_analysis_workflow.png" />
+</div>
 
 
 (?)This workflow securely logs customer reviews daily. It first safeguards original data to ensure no review is lost, then uses an AI agent to analyze sentiment, and flag urgent feedback to your support team on Slack.
@@ -414,8 +410,8 @@ This secondary workflow uses an OpenAI GPT-5.4 API to generate weekly executive 
 The workflow automatically runs every Monday at 9:00 AM to keep key stakeholders updated on customer feedback and sentiment. The comparative trend analysis over previous months helps identify trends and maintain the larger picture.
 
 <div align="center">
-  <img width="320px" src="/assets/images/ttt" />
-</div
+  <img width="700px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/executive_summary_workflow.png" />
+</div>
 
 
 ### **Data Retrieval**
@@ -592,7 +588,9 @@ Overall, the past week largely reinforces existing trends rather than introducin
 
 
 # Component 3 - Power BI Dashboard
-[Overview page]
+<div align="center">
+  <img width="1000px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/dashboard_overview.jpg" />
+</div>
 
 t
 
