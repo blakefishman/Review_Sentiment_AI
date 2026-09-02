@@ -42,8 +42,13 @@ This primary workflow automatically analyzes review sentiment daily with an Open
 These new metrics are combined with the original review metadata in a central table to power downstream analytics, including the up-to-date dashboard. Additionally, the agentic AI can alert customer support via Slack if it deems a review to be urgent.
 
 <div align="center">
-  <img width="320px" src="/assets/images/ttt" />
+  <img width="320px" src="[/assets/images/ttt](https://github.com/user-attachments/assets/a9076b89-583b-44d7-926e-852bcc4c9685)" />
 </div
+
+
+<img width="5660" height="2291" alt="sentiment_analysis_workflow" src="https://github.com/user-attachments/assets/a9076b89-583b-44d7-926e-852bcc4c9685" />
+
+
 
 (?)This workflow securely logs customer reviews daily. It first safeguards original data to ensure no review is lost, then uses an AI agent to analyze sentiment, and flag urgent feedback to your support team on Slack.
 
