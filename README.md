@@ -18,7 +18,7 @@ Additionally, a weekly executive summary is generated and delivered via Slack ev
 * An **OpenAI GPT-5.4 API** connection powers the **agentic AI**’s reasoning engine.
 * The **Make.com** blueprints used for **workflow automation** are available [here](https://github.com/blakefishman/Review_Sentiment_AI/tree/main/Blueprints).
 * The **SQL** queries used to examine the final data and perform quality checks are available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/SQL%20Queries/Initial%20Data%20Checks%20and%20Examination.sql).
-* The **Power BI dashboard** for review sentiment trends & analysis is available here.
+* The **Power BI dashboard** for review sentiment trends and interactive analysis is available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Review_Sentiment_Dashboard_PowerBI.pbix).
 * **Google Sheets** is used for cloud data input.
 * **Google Drive** is used for cloud storage.
 * **Fivetran** is the **ELT** used to transfer the data from Google Drive to Google BigQuery.
@@ -575,7 +575,24 @@ Overall, the past week largely reinforces existing trends rather than introducin
   <img width="1050px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/dashboard_overview.jpg" />
 </div>
 
-The full dashboard is available here.
+The full, interactive dashboard file is available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Review_Sentiment_Dashboard_PowerBI.pbix).
+
+<details>
+  <summary>🖼️ More dashboard views</summary>
+
+<br>
+
+<div align="center">
+  <img width="1050px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/dashboard_products.jpg" />
+</div>
+
+<br>
+
+<div align="center">
+  <img width="1050px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/dashboard_sentiment.jpg" />
+</div>
+
+</details>
 
 
 ## Insights
