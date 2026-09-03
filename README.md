@@ -400,7 +400,7 @@ This secondary workflow uses an OpenAI GPT-5.4 API to generate weekly executive 
 The workflow automatically runs every Monday at 9:00 AM to keep key stakeholders updated on customer feedback and sentiment. The comparative trend analysis over previous months helps identify trends and maintain the larger picture.
 
 <div align="center">
-  <img width="750px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/executive_summary_workflow.png" />
+  <img width="700px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/executive_summary_workflow.png" />
 </div>
 
 
