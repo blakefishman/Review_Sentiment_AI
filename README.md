@@ -98,7 +98,7 @@ These new metrics are combined with the original review metadata in a central ta
     
     </details>
 
-3. Count the number of returned rows. If there are no reviews from yesterday (zero rows), end the workflow. If there are any reviews from yesterday (≤1 row), continue the workflow.
+3. Count the number of rows returned. If there are no reviews from yesterday (0 rows), end the workflow. If there are any reviews from yesterday (≥1 rows), continue the workflow.
 4. Input these returned rows with their original fields (id, date, rating, product, category, and comments) into the *customer_reviews_processed* table (available here) before any AI logic starts.
     - This ensures that if the AI API fails, the original information is still carried over to the new table for data integrity purposes and can be re-analyzed later.
 
