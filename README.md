@@ -16,7 +16,7 @@ Additionally, a weekly executive summary is generated and delivered via Slack ev
 
 # Technologies Used
 * An **OpenAI GPT-5.4 API** connection powers the **agentic AI**’s reasoning engine.
-* The **Make.com** blueprints used for **workflow automation** are available here.
+* The **Make.com** blueprints used for **workflow automation** are available [here](https://github.com/blakefishman/Review_Sentiment_AI/tree/main/Blueprints).
 * The **SQL** queries used to examine the final data and perform quality checks are available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/SQL%20Queries/Initial%20Data%20Checks%20and%20Examination.sql).
 * The **Power BI dashboard** for review sentiment trends & analysis is available here.
 * **Google Sheets** is used for cloud data input.
@@ -42,11 +42,9 @@ These new metrics are combined with the original review metadata in a central ta
 
 
 <div align="center">
-  <img width="900px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/sentiment_analysis_workflow.png" />
+  <img width="950px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/sentiment_analysis_workflow.png" />
 </div>
 
-
-(?)This workflow securely logs customer reviews daily. It first safeguards original data to ensure no review is lost, then uses an AI agent to analyze sentiment, and flag urgent feedback to your support team on Slack.
 
 ### **Data Retrieval & Safeguarding**
 1. Automatically trigger every morning at 7:30 AM.
@@ -173,16 +171,6 @@ These new metrics are combined with the original review metadata in a central ta
 Urgency is defined for the AI as a review whose comments require immediate human intervention (e.g., threats, asking a question, wants to return/refund, product safety issue, severe bugs, etc.).
 11. The AI is authorized to send a message in a specified Slack channel to alert support staff, at its discretion, if it deems a review to be urgent.
 
-
-<details>
-  <summary>📄 Full AI Prompt Instructions</summary>
-
-**Prompt file is also available here.**
-```md
-t
-```
-
-</details>
 
 <details>
   <summary>⚙️ Example AI Run #1</summary>
@@ -399,9 +387,11 @@ Output:
 
 </details>
 
-📂 The full, analyzed database table is available here.
+📂 The full, analyzed database table is available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Data/reviews_analyzed.csv).
 
-📂 The blueprint.json file is available here.
+📂 The blueprint.json file is available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Blueprints/sentiment_analysis.blueprint.json).
+
+📂 The full prompt instructions are available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Prompts/sentiment_analysis_agentic_prompt.md).
 
 
 # Component 2 - AI Executive Summary Workflow
@@ -410,7 +400,7 @@ This secondary workflow uses an OpenAI GPT-5.4 API to generate weekly executive 
 The workflow automatically runs every Monday at 9:00 AM to keep key stakeholders updated on customer feedback and sentiment. The comparative trend analysis over previous months helps identify trends and maintain the larger picture.
 
 <div align="center">
-  <img width="700px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/executive_summary_workflow.png" />
+  <img width="750px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/executive_summary_workflow.png" />
 </div>
 
 
@@ -555,16 +545,7 @@ The workflow automatically runs every Monday at 9:00 AM to keep key stakeholders
 
 ### **Slack Delivery**
 9. The AI result is sent to a specific Slack channel or user.
- 
-<details>
-  <summary>📄 Full AI Prompt Instructions</summary>
 
-**Prompt file is also available here.**
-```md
-t
-```
-
-</details>
 
 <details>
   <summary>📄 Example Executive Summary Message</summary>
@@ -584,12 +565,14 @@ Overall, the past week largely reinforces existing trends rather than introducin
 
 </details>
 
-📂 The blueprint.json file is available here.
+📂 The blueprint.json file is available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Blueprints/executive_summary.blueprint.json).
+
+📂 The full prompt instructions are available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Prompts/executive_summary_prompt.md).
 
 
 # Component 3 - Power BI Dashboard
 <div align="center">
-  <img width="1000px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/dashboard_overview.jpg" />
+  <img width="1050px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/dashboard_overview.jpg" />
 </div>
 
 The full dashboard is available here.
@@ -624,22 +607,3 @@ The full dashboard is available here.
 * Integrate a customer support ticket system for urgent cases instead of Slack alerts.
 * Implement web scraping for competitor reviews to enable a competitor comparative analysis for the weekly executive summaries.
 * Perform demographic analyses by including customer demographic information. However, the current real-world review dataset is anonymized and lacks customer data such as age, gender, and location.
-
-
-
-<details>
-  <summary>tttttttttttt</summary>
-
-Input:
-```json
-t
-```
-
-Output:
-```json
-t
-```
-
-</details>
-
-
