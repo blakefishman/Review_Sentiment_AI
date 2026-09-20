@@ -28,7 +28,7 @@ Additionally, a weekly executive summary is generated and delivered via Slack ev
 
 
 # Executive Summary
-This AI-powered review analytics end-to-end pipeline automates the analysis of customer feedback to resolve the company's current inability to analyze customer reviews at scale, transforming reviews into deeper insights on sentiment, topics, emotions, and urgent issues through integrated cloud data systems. The solution provides stakeholders with actionable insights and timely visibility into customer trends through a daily batch-processed dashboard, automated Slack alerts for urgent reviews, and weekly executive summaries that compare recent feedback with historical patterns.
+This end-to-end AI-powered review analytics pipeline automates the analysis of customer feedback to resolve the company's current inability to analyze customer reviews at scale, transforming reviews into deeper insights on sentiment, topics, emotions, and urgency through integrated cloud data systems. The solution provides stakeholders with actionable insights and timely visibility into customer trends through a review sentiment dashboard, automated Slack alerts for urgent reviews, and weekly executive summaries that compare recent feedback with historical patterns.
 
 Key recommendations extracted from the dashboard focus on reducing pre-existing customer friction across the Technology category, monitoring for potential future issues, leveraging post-holiday review campaigns, and addressing friction with shipping by improving visibility through real-time tracking, proactive alerts, and estimated arrival windows.
 
@@ -568,7 +568,7 @@ Overall, the past week largely reinforces existing trends rather than introducin
 📂 The full prompt instructions are available [here](https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Prompts/executive_summary_prompt.md).
 
 
-# Component 3 - Power BI Dashboard
+# Component 3 - Review Sentiment Dashboard
 <div align="center">
   <img width="1050px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/dashboard_overview.jpg" />
 </div>
