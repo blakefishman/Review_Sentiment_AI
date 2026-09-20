@@ -28,11 +28,9 @@ Additionally, a weekly executive summary is generated and delivered via Slack ev
 
 
 # Executive Summary
-tt
+This AI-powered review analytics end-to-end pipeline automates the analysis of customer feedback to resolve the company's current inability to analyze customer reviews at scale, transforming reviews into deeper insights on sentiment, topics, emotions, and urgent issues through integrated cloud data systems. The solution provides stakeholders with actionable insights and timely visibility into customer trends through a daily batch-processed dashboard, automated Slack alerts for high-risk reviews, and weekly executive summaries that compare recent feedback with historical patterns.
 
-
-# Project Architecture
-t?
+Key recommendations extracted from the dashboard focus on reducing pre-existing customer friction across the Technology category, monitoring for potential future issues, leveraging post-holiday review campaigns, and addressing friction with shipping by improving visibility through real-time tracking, proactive alerts, and estimated arrival windows.
 
 
 # Component 1 - AI Sentiment Analysis Workflow
@@ -595,7 +593,7 @@ The full, interactive dashboard file is available [here](https://github.com/blak
 </details>
 
 
-## Insights
+# Insights
 * **Review volume has surged significantly so far this year** compared to the company’s launch last year in 2025. Feedback has stabilized at a 3.8 out of 5-star average rating with a +0.64 average sentiment score, leading to 80% of reviews being Positive.
 * **The Stanley Thermos is the strongest-performing product**, with a 4.1 out of 5-star average rating and a +0.75 average sentiment score, leading to 87.6% of reviews being Positive sentiment. Added to the lineup in September 2025, the Stanley Thermos gained significant traction in April 2026 and is currently our second-most reviewed product of all time.
 * **Conversely, Apple Magic Mouse is the weakest-performing product**, with a 3.6 out of 5-star average rating and a notably lower average sentiment score of +0.40. It is the source of over half of all negative reviews (52.6%), and over a third of its reviews have Mixed or Negative sentiment. Main friction points center on poor usability, an uncomfortable design, and compatibility issues with some macOS versions.
@@ -606,7 +604,7 @@ The full, interactive dashboard file is available [here](https://github.com/blak
 
 
 
-## Recommendations
+# Recommendations
 * **Investigate the design and compatibility issues for the Apple Magic Mouse**, particularly ensuring that the company website includes comprehensive technical support disclaimers and macOS compatibility guides.
 * **Monitor the newly introduced Apple AirPods** for more negative feedback and investigate whether quality control issues exist. It is possible we received a malfunctioning batch.
 * Ensure support teams are equipped to handle technical difficulty issues related to connectivity and compatibility.
