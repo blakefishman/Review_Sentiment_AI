@@ -28,7 +28,7 @@ Additionally, a weekly executive summary is generated and delivered via Slack ev
 
 
 # Executive Summary
-This AI-powered review analytics end-to-end pipeline automates the analysis of customer feedback to resolve the company's current inability to analyze customer reviews at scale, transforming reviews into deeper insights on sentiment, topics, emotions, and urgent issues through integrated cloud data systems. The solution provides stakeholders with actionable insights and timely visibility into customer trends through a daily batch-processed dashboard, automated Slack alerts for high-risk reviews, and weekly executive summaries that compare recent feedback with historical patterns.
+This AI-powered review analytics end-to-end pipeline automates the analysis of customer feedback to resolve the company's current inability to analyze customer reviews at scale, transforming reviews into deeper insights on sentiment, topics, emotions, and urgent issues through integrated cloud data systems. The solution provides stakeholders with actionable insights and timely visibility into customer trends through a daily batch-processed dashboard, automated Slack alerts for urgent reviews, and weekly executive summaries that compare recent feedback with historical patterns.
 
 Key recommendations extracted from the dashboard focus on reducing pre-existing customer friction across the Technology category, monitoring for potential future issues, leveraging post-holiday review campaigns, and addressing friction with shipping by improving visibility through real-time tracking, proactive alerts, and estimated arrival windows.
 
