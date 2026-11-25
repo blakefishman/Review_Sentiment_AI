@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="320px" src="/assets/images/ttt" />
+  <img width="320px" src="https://github.com/blakefishman/Review_Sentiment_AI/blob/main/Images/logo_cybershop.png" />
 </div>
 
 # Background
